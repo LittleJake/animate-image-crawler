@@ -1,4 +1,9 @@
 # Animate Image Crawler
+![license](https://img.shields.io/github/license/LittleJake/animate-image-crawler)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/LittleJake/animate-image-crawler/releases)
+![requirement](https://img.shields.io/badge/python-%3E=3.0-blue)
+
+
 A crawl for booru site. (gelbooru and safebooru, etc.)
 
 动漫图片爬虫，部分站点NSFW，经请留意。
@@ -31,7 +36,7 @@ A crawl for booru site. (gelbooru and safebooru, etc.)
 
 ```shell
 # install dependency
-pip3 install -r requirement.txt
+pip3 install -r requirements.txt
 
 # run
 python3 main.py <arguments>
