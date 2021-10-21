@@ -29,19 +29,19 @@ def download_and_save(url, header, name):
             with open(path, 'wb') as fp:
                 fp.write(response.data)
                 fp.flush()
-            logging.info("{} {}".format("save to:", path))
+            logging.info("{} {}".format("Save to:", path))
             downloaded = True
             break
 
     if not downloaded:
-        logging.info("{} {} {}".format(url, response.status, 'failed.'))
+        logging.info("{} {} {} {}".format(url, "HTTP", response.status, 'failed.'))
 
 
 def crawl(tags):
     rule = Config.RULE.get(Config.SITE, None)
     if rule is None:
         logging.error("{} {} {}".format("Site", Config.SITE, "not supported."))
-        exit(-1)
+        sys.exit(-1)
     page = 0
     while True:
         # Common booru site url schema.
@@ -90,11 +90,13 @@ def print_help():
 
     print("")
     print("Arguments:")
+    print("--tag='<tag name>'  : Single tag name. Can implement several times.")
     print("--tags='<tag names>': Multiple tag names. Each tag name separate by space. "
           "Replace space with underscore in one single tag.")
-    print("--tag='<tag name>'  : Single tag name. Can implement several times.")
-    print("--site=<site name>  : (Optional) Site name. Currently safebooru and gelbooru supported. default='safebooru'")
+    print("")
+    print("--log-level=<num>   : (Optional) 10-DEBUG,20-INFO,30-WARNING,40-ERROR,50-CRITICAL. default=20")
     print("--output=<path>     : (Optional) Output directory path. default='./download/'")
+    print("--site=<site name>  : (Optional) Site name. Currently safebooru and gelbooru supported. default='safebooru'")
     print("--thread-num=<num>  : (Optional) How many downloads allow at the same time. default=16")
 
 
@@ -112,7 +114,7 @@ for v in sys.argv[1:]:
 
 if len(tags) == 0:
     print_help()
-    exit(-1)
+    sys.exit(-1)
 
 logging.info("{} {} {} {}".format('Fetching tags', tags, 'from site', Config.SITE))
 crawl(tags)
