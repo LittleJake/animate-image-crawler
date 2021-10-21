@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['D:\\OneDrive\\个人文档\\个人项目\\2021年\\20211012 动漫图片爬虫'],
+             pathex=[],
              binaries=[],
              datas=[],
              hiddenimports=[],
