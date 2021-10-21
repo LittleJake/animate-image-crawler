@@ -16,10 +16,10 @@ A crawl for booru site. (gelbooru and safebooru, etc.)
 | --------- | --------- | ---------------- |
 | Safebooru | ✔         | SFW              |
 | Gelbooru  | ✔         | NSFW（18+）      |
-| Konochan  | Upcoming  | SFW、NSFW（18+） |
+| Konachan  | Upcoming  | SFW、NSFW（18+） |
 
 
-目前支持Gelbooru和Safebooru，估计之后会添加Konochan。
+目前支持Gelbooru和Safebooru，估计之后会添加Konachan。
 
 目测是同一个网站框架，直接加对应网站正则表达式配置即可。
 
@@ -54,6 +54,6 @@ Arguments:
 
 
 
-## License 开原许可
+## License 开源许可
 
 [Apache2.0](LICENSE)
