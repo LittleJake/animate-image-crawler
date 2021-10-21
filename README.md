@@ -1,6 +1,6 @@
 # Animate Image Crawler
 ![license](https://img.shields.io/github/license/LittleJake/animate-image-crawler)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/LittleJake/animate-image-crawler/releases)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/LittleJake/animate-image-crawler/build)
 ![requirement](https://img.shields.io/badge/python-%3E=3.0-blue)
 
 
