@@ -22,7 +22,7 @@ jobs:
 
       - name: PyInstaller Windows
         run: |
-          - docker run -v $GITHUB_WORKSPACE:/src cdrx/pyinstaller-windows:latest 'pyinstaller -F --clean -y --dist ./ --workpath /tmp main.py'
+          docker run -v $GITHUB_WORKSPACE:/src cdrx/pyinstaller-windows:latest 'pyinstaller -F --clean -y --dist ./ --workpath /tmp main.py'
 
       - name: release
         uses: actions/create-release@v1
