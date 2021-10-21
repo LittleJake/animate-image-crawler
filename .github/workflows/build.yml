@@ -21,9 +21,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: PyInstaller Windows
-        uses: JackMcKew/pyinstaller-action-windows@v0.1.2
-        with:
-          path: .
+        run: |
+          - docker run -v $GITHUB_WORKSPACE:/src cdrx/pyinstaller-windows:latest 'pyinstaller -F --clean -y --dist ./ --workpath /tmp main.py'
 
       - name: release
         uses: actions/create-release@v1
@@ -43,6 +42,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/windows/main.exe
+          asset_path: ./main.exe
           asset_name: main.exe
           asset_content_type: application/octet-stream
